@@ -1,0 +1,49 @@
+.ball {
+  width: 100px;
+  height: 100px;
+  border: 2px solid black;
+  border-radius: 50px;
+}
+.container1 {
+  display: flex;
+  height: fit-content;
+  width: fit-content;
+  margin: 0;
+  border: 2px solid black;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+.container2 {
+  display: flex;
+  height: fit-content;
+  width: fit-content;
+  margin: 0;
+  border: 2px solid black;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+.clone {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+.b1 {
+  background-color: rgba(255, 0, 0, 0.733);
+}
+.b4 {
+  background-color: rgba(255, 0, 0, 0.733);
+}
+.b3 {
+  background-color: rgba(0, 0, 255, 0.563);
+}
+.b6 {
+  background-color: rgba(0, 0, 255, 0.563);
+}
+.b2 {
+  background-color: rgba(255, 255, 0, 0.608);
+}
+.b5 {
+  background-color: rgba(255, 255, 0, 0.608);
+}

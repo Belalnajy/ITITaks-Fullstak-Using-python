@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="search.css">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SearchFilter</title>
+    <script src="jq-3-7-1.js"></script>
+    <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"
+        integrity="sha256-9zljDKpE/mQxmaR4V2cGVaQ7arF3CcXxarvgr7Sj8Uc=" crossorigin="anonymous"></script>
+
+
+    <script>
+
+        $(function () {
+            $("#search").keyup(function () {
+                let searchval = $(this).val().toLowerCase();
+                let inputvalue = $("input[name='filter']:checked").val()
+                // console.log(inputvalue);
+                $("table tbody tr").filter(function () {
+                    let firsttxt = $(this).find("td:first").text().toLowerCase();
+                    let secondtxt = $(this).find("td:last").text().toLowerCase();
+                    if (inputvalue == "first") {
+                        //    console.log($(this).toggle(firsttxt.indexOf(searchval) > -1))
+                        $(this).toggle(firsttxt.indexOf(searchval) > -1);
+                    }
+                    else if (inputvalue == "last") {
+                        // console.log($(this).toggle(secondtxt.indexOf(searchval) > -1));
+                        $(this).toggle(secondtxt.indexOf(searchval) > -1);
+                    }
+                    else {
+                        //    console.log( $(this).toggle(firsttxt.indexOf(searchval) > -1 || secondtxt.indexOf(searchval) > -1));
+                        $(this).toggle(firsttxt.indexOf(searchval) > -1 || secondtxt.indexOf(searchval) > -1);
+                    }
+
+
+
+                });
+            }); //end of keyup
+        }); //end of load
+
+    </script>
+</head>
+
+<body>
+    <div id="forsearch">
+        <label for="search">Search</label> <input type="input" name="search" id="search">
+    </div>
+    <div id="forfilter">
+        <div class="filter-item">
+            <input type="radio" id="first" name="filter" value="first">
+            <label for="first">Filter Using FirstName</label>
+        </div>
+        <div class="filter-item">
+            <input type="radio" id="last" name="filter" value="last">
+            <label for="last">Filter Using Lastname</label>
+        </div>
+        <div class="filter-item">
+            <input type="radio" id="any" name="filter" value="any">
+            <label for="any">Filter Using any first and last</label>
+        </div>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>FirstName</th>
+                <th>LastName</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Lionel</td>
+                <td>Messi</td>
+            </tr>
+            <tr>
+                <td>Luis</td>
+                <td>Suarez</td>
+            </tr>
+            <tr>
+                <td>Erling</td>
+                <td>Haaland</td>
+            </tr>
+            <tr>
+                <td>Lamine</td>
+                <td>Yamal</td>
+            </tr>
+            <!-- <tr>
+                <td>amir</td>
+                <td>hazem</td>
+            </tr>
+            <tr>
+                <td>kamal</td>
+                <td>samir</td>
+            </tr>
+            <tr>
+                <td>waad</td>
+                <td>jemy</td> -->
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+
+</html>

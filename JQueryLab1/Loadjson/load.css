@@ -1,0 +1,60 @@
+body {
+  background-color: lightgray;
+}
+
+#mainwrapper {
+  display: flex;
+  flex-direction: row;
+  height: 70vh;
+  width: 70vw;
+  padding: 20px;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  gap: 1rem;
+}
+
+button {
+  padding: 10px;
+  margin: 10px;
+  background-color: rgb(0, 66, 88);
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: rgb(0, 55, 77);
+}
+
+.user-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: white;
+  border-radius: 10px;
+  margin: 4px;
+  padding: 20px;
+  width: 200px;
+  height: 300px;
+  border: 1px solid lightgray;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.user-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+}
+
+.user-card h2 {
+  margin: 0 0 10px 0;
+  font-size: 20px;
+  color: rgb(0, 66, 88);
+}
+
+.user-card p {
+  margin: 5px 0;
+  color: gray;
+}

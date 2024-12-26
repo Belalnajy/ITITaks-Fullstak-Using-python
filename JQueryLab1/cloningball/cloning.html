@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloning</title>
+    <link rel="stylesheet" href="cloning.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"
+        integrity="sha256-9zljDKpE/mQxmaR4V2cGVaQ7arF3CcXxarvgr7Sj8Uc=" crossorigin="anonymous"></script>
+    <script>
+        $(function () {
+            $(".b").click(function () {
+                $(this).clone().appendTo(".clo1")
+            }); //end of case one
+            $(".c").click(function () {
+                $(this).clone(true).appendTo(".clo2")
+            }); //end of case two
+        });
+    </script>
+</head>
+
+<body>
+
+    <div class="container1">
+        <div class="ball b b1"></div>
+        <div class="ball b b2"></div>
+        <div class="ball b b3"></div>
+    </div>
+
+    <div class="clone clo1"></div>
+
+    <div class="container2">
+        <div class="ball c b4"></div>
+        <div class="ball c b5"></div>
+        <div class="ball c b6"></div>
+    </div>
+    <div class="clone clo2"></div>
+
+</body>
+
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CounrtyJson</title>
+    <link rel="stylesheet" href="json.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        // $(function () {
+        //     $.getJSON("https://restcountries.com/v2/name/Egypt", function (data) {
+        //         console.log(data[0].population);
+        //         $("#population").text(data[0].population);
+        //         $("#capital").text(data[0].capital);
+        //         $("#region").text(data[0].region);
+        //         $("#subregion").text(data[0].subregion);
+        //         $("#languages").text(data[0].languages[0].name);
+        //         $("#currencies").text(data[0].currencies[0].name);
+        //         $("#flag").prop("src", data[0].flag);
+        //     });
+        //     $.getJSON("https://restcountries.com/v2/name/Libya", function (data) {
+        //         console.log(data[0].population);
+        //         $("#population1").text(data[0].population);
+        //         $("#capital1").text(data[0].capital);
+        //         $("#region1").text(data[0].region);
+        //         $("#subregion1").text(data[0].subregion);
+        //         $("#languages1").text(data[0].languages[0].name);
+        //         $("#currencies1").text(data[0].currencies[0].name);
+        //         $("#flag1").prop("src", data[0].flag);
+        //     });
+        // });
+
+
+        //To do it with ajax
+        $(function () {
+            $.ajax({
+                url: "https://restcountries.com/v2/name/Egypt",
+                method: "GET",
+                success: function (data) {
+                    console.log(data[0].population);
+                    $("#population").text(data[0].population);
+                    $("#capital").text(data[0].capital);
+                    $("#region").text(data[0].region);
+                    $("#subregion").text(data[0].subregion);
+                    $("#languages").text(data[0].languages[0].name);
+                    $("#currencies").text(data[0].currencies[0].name);
+                    $("#flag").prop("src", data[0].flag);
+
+                },
+                error: function (xhr, status, error) {
+                    console.log("Error: " + error);
+                }
+
+            });
+            $.ajax({
+                url: "https://restcountries.com/v2/name/Libya",
+                method: "GET",
+                success: function (data) {
+                    console.log(data[0].population);
+                    $("#population1").text(data[0].population);
+                    $("#capital1").text(data[0].capital);
+                    $("#region1").text(data[0].region);
+                    $("#subregion1").text(data[0].subregion);
+                    $("#languages1").text(data[0].languages[0].name);
+                    $("#currencies1").text(data[0].currencies[0].name);
+                    $("#flag1").prop("src", data[0].flag);
+
+                },
+                error: function (xhr, status, error) {
+                    console.log("Error: " + error);
+                }
+            });
+        });
+    </script>
+</head>
+
+<body>
+
+    <div class="card">
+        <img id="flag" src="" alt="Flag of Egypt">
+        <h1>Egyptian Information</h1>
+        <div>
+            <label for="population">Population:</label>
+            <span id="population"></span>
+        </div>
+        <div>
+            <label for="capital">Capital:</label>
+            <span id="capital"></span>
+        </div>
+        <div>
+            <label for="region">Region:</label>
+            <span id="region"></span>
+        </div>
+        <div>
+            <label for="subregion">Subregion:</label>
+            <span id="subregion"></span>
+        </div>
+        <div>
+            <label for="languages">Main Language:</label>
+            <span id="languages"></span>
+        </div>
+    </div>
+
+    <div class="card">
+        <img id="flag1" src="" alt="Flag of Egypt">
+        <h1>Libyan Information</h1>
+        <div>
+            <label for="population">Population:</label>
+            <span id="population1"></span>
+        </div>
+        <div>
+            <label for="capital">Capital:</label>
+            <span id="capital1"></span>
+        </div>
+        <div>
+            <label for="region">Region:</label>
+            <span id="region1"></span>
+        </div>
+        <div>
+            <label for="subregion">Subregion:</label>
+            <span id="subregion1"></span>
+        </div>
+        <div>
+            <label for="languages">Main Language:</label>
+            <span id="languages1"></span>
+        </div>
+    </div>
+
+</body>
+
+</html>

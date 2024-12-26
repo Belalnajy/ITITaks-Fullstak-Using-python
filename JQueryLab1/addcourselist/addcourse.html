@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="addcourses.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AddCourse</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"
+        integrity="sha256-9zljDKpE/mQxmaR4V2cGVaQ7arF3CcXxarvgr7Sj8Uc=" crossorigin="anonymous"></script>
+    <script>
+
+        $(function () {
+            let clickedText = "";
+            $("#add").click(function () {
+                if ($("#input").val() == "") {
+                    alert("Please enter a course name.");
+                    return false;
+                }
+                else {
+                    $(".leftside ul").append("<li>" + $("#input").val() + "</li>");
+                    $("#input").val("");
+                }
+            }); //end of add button
+
+            $(".leftside ul")
+                .on("mousedown", "li", function () {
+                    clickedText = $(this)
+                    $(this).css("color", "blueviolet");
+                }); //end of mousedown event
+            $("#appendtoright").click(function () {
+                if (clickedText) {
+                    $(".rightside ul").append("<li>" + clickedText.text() + "</li>");
+                    clickedText.remove();
+                    clickedText = "";
+
+                }
+            }); //end of append to right button
+            $(".rightside ul")
+                .on("mousedown", "li", function () {
+                    clickedText = $(this)
+
+                    $(this).css("color", "blueviolet");
+
+                }); //end of mousedown event
+            $("#appendtoleft").click(function () {
+                if (clickedText) {
+                    $(".leftside ul").append("<li>" + clickedText.text() + "</li>");
+                    clickedText.remove();
+                    clickedText = "";
+
+                }
+            }); //end of append to left button
+        }); //end of load
+
+
+
+
+    </script>
+</head>
+
+<body>
+    <div id="container">
+        <div class="side leftside">
+            <ul>
+
+            </ul>
+        </div>
+        <div class="side rightside">
+            <ul>
+
+            </ul>
+        </div>
+    </div>
+    <div id="appendbtns">
+        <button id="appendtoleft">to left</button>
+        <button id="appendtoright">to right</button>
+
+
+
+    </div>
+    <div id="addcourse">
+        <label for="add" style="margin-right:7px;">Add course </label><input type="input" id="input"> <button
+            id="add">Add</button>
+    </div>
+
+</body>
+
+</html>

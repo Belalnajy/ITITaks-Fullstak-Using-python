@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Load Json</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="load.css">
+    <script>
+        // $(function () {
+        //     $("#loadjson").click(function () {
+        //         $.getJSON('https://jsonplaceholder.typicode.com/users', function (data) {
+        //             // console.log(data);
+        //             var content = "";
+        //             for (var i = 0; i < data.length; i++) {
+        //                 $("#mainwrapper").append(
+        //                     "<div class='user-card'>" +
+        //                     "<h2>" + data[i].name + "</h2>" +
+        //                     "<p>Email: " + data[i].email + "</p>" +
+        //                     "<p>Street: " + data[i].address.street + "</p>" +
+        //                     "<p>City: " + data[i].address.city + "</p>" +
+        //                     "<p>Zipcode: " + data[i].address.zipcode + "</p>" +
+        //                     "<p>Phone: " + data[i].phone + "</p>" +
+        //                     "<p>Website: " + data[i].website + "</p>" +
+        //                     "</div>");
+        //             }
+
+        //         });
+
+        //     });
+
+        // }); //end of load
+
+
+        //To do it with ajax
+        $(function () {
+            $("#loadjson").click(function () {
+                $.ajax({
+                    url: 'https://jsonplaceholder.typicode.com/users',
+                    method: 'GET',
+                    dataType: 'json',
+                    success: function (data) {
+                        var content = "";
+                        for (var i = 0; i < data.length; i++) {
+                            $("#mainwrapper").append(
+                                "<div class='user-card'>" +
+                                "<h2>" + data[i].name + "</h2>" +
+                                "<p>Email: " + data[i].email + "</p>" +
+                                "<p>Street: " + data[i].address.street + "</p>" +
+                                "<p>City: " + data[i].address.city + "</p>" +
+                                "<p>Zipcode: " + data[i].address.zipcode + "</p>" +
+                                "<p>Phone: " + data[i].phone + "</p>" +
+                                "<p>Website: " + data[i].website + "</p>" +
+                                "</div>");
+                        }
+                    },
+                    error: function (xhr, status, error) {
+                        console.log(xhr.responseText);
+                    }
+                });
+
+
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <button id="loadjson">Load JSON</button>
+    <div id="mainwrapper"> </div>
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jsonaccordion</title>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="jsonacc.css">
+    <script>
+        // $(function () {
+        //     $.getJSON('https://jsonplaceholder.typicode.com/users', function (data) {
+        //         var jdata = "";
+        //         for (var i = 0; i < data.length; i++) {
+        //             jdata += ("<h3>" + data[i].name + "</h3><div><p>Email: " + data[i].email + "</p>" + "<p>username: " + data[i].username + "</p>" + "<p>city: " + data[i].address.city + "</p>" + "</div> ");
+        //         }
+
+        //         $("#accordion").html(jdata);
+        //         $("#accordion").accordion();
+        //     });
+        // }); //end of load
+
+
+
+        //To do it with ajax
+        $(function () {
+
+            $.ajax({
+                url: 'https://jsonplaceholder.typicode.com/users',
+                method: 'GET',
+                dataType: 'json',
+                success: function (data) {
+                    var jdata = "";
+                    for (var i = 0; i < data.length; i++) {
+                        jdata += ("<h3>" + data[i].name + "</h3><div><p>Email: " + data[i].email + "</p>" + "<p>username: " + data[i].username + "</p>" + "<p>city: " + data[i].address.city + "</p>" + "</div> ");
+
+                    }
+                    $("#accordion").html(jdata);
+                    $("#accordion").accordion();
+                }
+
+            });
+        });
+
+    </script>
+</head>
+
+<body>
+
+    <div id="accordion">
+
+    </div>
+
+</body>
+
+</html>

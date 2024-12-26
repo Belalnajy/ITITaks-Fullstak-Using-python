@@ -1,0 +1,65 @@
+table {
+    width: 50%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+}
+
+th,
+td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+th {
+    background-color: #007bff;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tr:nth-child(odd) {
+    background-color: #007bff1e;
+}
+
+td:hover {
+    background-color: #ddd;
+}
+
+#search {
+    width: 10%;
+    padding: 6px;
+    margin-bottom: 10px;
+    margin-left: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+#forsearch {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#forfilter {
+    height: 50%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.filter-item {
+    display: flex;
+    align-items: center;
+    margin: 5px;
+}
+
+.filter-item label {
+    margin-left: 5px;
+}

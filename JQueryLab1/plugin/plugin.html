@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plugin</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function () {
+            $.fn.listStyleType = function (val) {
+                this.css("list-style-type", val);
+                return this;
+            }
+
+
+            $.fn.colorfyLiStartedWithLetter = function (matchedletter, color) {
+                this.each(function () {
+                    var text = $(this).text();
+                    var firstLetter = text.charAt(0).toLowerCase();
+                    if (firstLetter === matchedletter.toLowerCase()) {
+                        $(this).css("color", color);
+                    }
+                });
+                return this;
+            }
+
+            // Apply plugins
+            $("ul").listStyleType("georgian").find("li").colorfyLiStartedWithLetter("m", "red");
+        });
+    </script>
+</head>
+
+<body>
+    <ul>
+        <li>ahmed</li>
+        <li>messi</li>
+        <li>mohamed</li>
+        <li>salah</li>
+        <li>mahmood</li>
+        <li>belal</li>
+
+    </ul>
+</body>
+
+</html>
