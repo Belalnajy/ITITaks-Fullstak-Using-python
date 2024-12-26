@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container {
+            display: flex ;
+            flex-direction: row;
+            justify-content: left;
+        
+        }
+        .box{
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function () {
+            $(".box").click(function () {
+                let bgcolor = $(this).css("background-color");
+                $("#show").text("the div is: " + bgcolor).css("color", bgcolor)
+            });
+        }); // end of load
+    </script>
+</head>
+
+<body>
+    <span id="show"></span>
+    <div id="container">
+        
+        <div class="box" style="background-color: rgb(19, 9, 9);"></div>
+        <div class="box" style="background-color: rgb(240, 240, 102);"></div>
+        <div class="box" style="background-color: rgba(3, 233, 34, 0.785);"></div>
+        <div class="box" style="background-color: rgb(255, 91, 91);"></div>
+        <div class="box" style="background-color: rgb(97, 17, 196);"></div>
+    </div>
+</body>
+
+</html>

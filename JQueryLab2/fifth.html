@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: black;
+        }
+
+        span {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 500px;
+            text-align: center;
+            color: red;
+            animation: rotate 2s infinite linear;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: rgb(255, 255, 255);
+            color: black;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-weight: bold;
+            text-shadow: 0 0 3px #ffffff, 0 0 5px #000000;
+
+        }
+
+        button:hover {
+            color: #000000;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+            transform: scale(1.05);
+            cursor: pointer;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"
+        integrity="sha256-9zljDKpE/mQxmaR4V2cGVaQ7arF3CcXxarvgr7Sj8Uc=" crossorigin="anonymous"></script>
+    <script>
+
+        $(function () {
+            $("button").click(function () {
+                $(".co").animate({ "color": "blue" }, 1500)
+                .animate({ "color": "green" }, 1500)
+                .animate({ "color": "gray" }, 1500)
+                .animate({ "color": "white" }, 1500)
+                .animate({ "color": "red" }, 1500);
+                // $("button").animate({ "color": "blue" }, 1000).animate({ "color": "green" }, 1000).animate({ "color": "gray" }, 1000).animate({ "color": "white" }, 1000).animate({ "color": "red" }, 1000);
+
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <button class="co">Click Me</button>
+    <span class="co">&hearts;</span>
+</body>
+
+</html>
