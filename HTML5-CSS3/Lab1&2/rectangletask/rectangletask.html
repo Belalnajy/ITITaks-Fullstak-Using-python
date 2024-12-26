@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rectangle box</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+
+        }
+
+        @keyframes example {
+            0% {
+                background-color: red;
+                left: -100px;
+                top: 0px;
+            }
+
+            25% {
+                background-color: yellow;
+                left: 400px;
+                top: 0px;
+            }
+
+            50% {
+                background-color: blue;
+                left: 400px;
+                top: 400px;
+            }
+
+            75% {
+                background-color: green;
+                left: 0px;
+                top: 400px;
+            }
+
+            100% {
+                background-color: red;
+                left: 0px;
+                top: 0px;
+            }
+        }
+
+        .box {
+            border: 1px solid black;
+            width: 300px;
+            height: 100px;
+            background-color: red;
+            animation-name: example;
+            animation-duration: 6s;
+            animation-delay: 2s;
+            animation-iteration-count: infinite;
+
+            position: relative;
+
+        }
+
+        #mainwrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 400px;
+        }
+    </style>
+</head>
+
+<body>
+    <section id="mainwrapper">
+        <section class="box box1">one</section>
+    </section>
+</body>
+
+</html>

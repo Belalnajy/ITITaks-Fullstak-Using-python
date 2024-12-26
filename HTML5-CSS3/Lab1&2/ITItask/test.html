@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flexlayout</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        #nav {
+            display: flex;
+            min-height: 10vh;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+
+        ul>li {
+            list-style: none;
+        }
+
+        ul>li>a {
+            text-decoration: none;
+            color: rgb(186, 7, 7);
+            font-weight: bold;
+        }
+
+        ul>li>a:hover {
+            color: rgb(99, 95, 95);
+        }
+
+        .intro {
+            width: 100vw;
+            height: 90vh;
+            background-image: url(images/laptop_top.jpg);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+
+        .intro>h4 {
+            font-size: 3rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .intro>button {
+            padding: 1.2rem 2rem;
+            outline: none;
+            border: none;
+            border-radius: 1rem;
+            ;
+            background-image: linear-gradient(to left, transparent, rgb(162, 162, 228));
+        }
+
+        .intro>button:hover {
+            background-image: linear-gradient(to right, transparent, rgb(162, 162, 228));
+        }
+
+        footer {
+            background-color: #20232a;
+            color: gray;
+            padding: 1rem;
+            justify-content: left;
+            width: 100vw;
+            flex-direction: row;
+            display: grid;
+            grid-template-columns: 6fr 1fr;
+            grid-gap: 1rem;
+            grid-template-areas: "contact social";
+
+
+
+        }
+
+        #social-media {
+            grid-area: social;
+        }
+
+        #social-media img {
+            width: 30px;
+            height: 30px;
+            margin-right: 1rem;
+        }
+
+        #contact {
+            display: flex;
+            flex-direction: column;
+            align-items: left;
+            margin-top: 1rem;
+        }
+
+        #contact li {
+            margin-bottom: 1rem;
+        }
+
+        #contactus {
+            grid-area: contact;
+
+        }
+
+        #Location {
+            display: grid;
+            grid-template-columns:4fr 1fr 1fr;
+           
+            grid-template-areas: "map iti1 iti2";
+            grid-gap: 1rem;
+
+            margin-bottom: 400px;
+            
+        }
+    .ITI  button{
+        background-color: #47474746; /* Green */
+  border: none;
+  color: #2e526a;
+  padding: 30px 30px;
+  text-decoration: none;
+  font-size: 16px;
+  margin: 4px 2px;
+  text-align: left;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+
+
+    }
+    .ITI button:hover {
+        background-color: #691d1d; 
+        color: white;
+    }
+    #ITI1{
+        grid-area: iti1;
+    }
+    #ITI2{
+        grid-area: iti2;
+    }
+    #map{
+        grid-area: map;
+    }
+    #map img{
+        width: 300px;
+        height: 300px    ;
+        margin-left: 200px;
+    }
+    #itilocation{
+        text-align: center;
+        margin-bottom: 20px;
+        font-size: 2rem;
+        font-weight: bold;
+        font-style: italic;
+        font-family: Arial, sans-serif;
+        color: #691d1d;
+      ;
+
+        
+        
+    }
+    #itipara{
+        text-align: center;
+        margin-bottom: 20px;
+        font-size: 1.5rem;
+        color: #691d1d;
+        font-family: Arial, Arial, Helvetica, sans-serif;
+
+    }
+    </style>
+</head>
+
+<body>
+    <ul id="nav">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Gallery</a></li>
+    </ul>
+    <section class="intro">
+        <h4>ITI Tanta</h4>
+        <button>Register</button>
+    </section>
+    <div class="tracks">
+        <div class="track">
+
+        </div>
+    </div>
+    <h2 id="itilocation">ITI Locations</h2>
+    <p id="itipara">iti main location all over the country</p>
+    <div id="Location">
+
+
+        <div class="ITI" id="ITI1">
+            <button>ITI -Smart village</button>
+            <button>ITI- Alexandria Location</button>
+            <button>ITI -Asuit</button>
+            <button>ITI-Aswan</button>
+        </div>
+        <div class="ITI" id="ITI2">
+            <button>ITI-Ismailia</button>
+            <button>ITI-Mansoura</button>
+            <button>ITI-Menofia</button>
+            <button>ITI-Minya</button>
+    </div>
+<div id="map">
+    <img src="images/map.png" alt="">
+</div>
+    </div>
+    <footer>
+        <div id="contactus">
+            <h2>Contact Us</h2>
+            <ul id="contact">
+                <li>28 km by cairo / Alexandria Desert Road ,6 October,B148,Egypt
+                <li>(+202)353-55656
+                <li>ITIinfo@iti.gov.eg
+            </ul>
+        </div>
+        <div id="social-media">
+            <h2>Follow Us</h2>
+
+            <a href="#"><img src="UP/facebook.png" alt="facebook"></a>
+            <a href="#"><img src="UP/twitter.png" alt="twitter"></a>
+            <a href="#"><img src="UP/instagram.png" alt="instagram"></a>
+        </div>
+        </div>
+    </footer>
+</body>
+
+</html>

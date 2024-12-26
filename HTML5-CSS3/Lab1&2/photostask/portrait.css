@@ -1,0 +1,35 @@
+
+#mainwrapper {
+  border: 4px solid rgba(130, 196, 16, 0.771);
+  width: 100%;
+  height: 100%;
+  margin: 30px auto;
+  box-shadow: 14px 14px 15px blueviolet, -2px -2px 15px blueviolet;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-template-areas: "content imgcontent";
+
+}
+#mainwrapper:hover{
+    transform: skewX(0deg);
+    transition-duration: 3s;
+    border: 2px solid yellow; 
+
+}
+#imgcontent {
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+   
+ 
+  }
+img{
+    transform: rotate(45deg);
+    border: none;
+    
+}
+img:active{
+    transform: scale(1.2,1.2);
+    transition-duration: 1s;
+    
+}
+

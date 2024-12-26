@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        canvas{
+            border: 1px solid white;
+            box-shadow: 20px 20px 20px red;
+            margin :50px 350px;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="canvas" width="800" height="600" style="background-color: black;"></canvas>
+    <script>
+        const canvas = document.querySelector('canvas');
+        const context = canvas.getContext('2d');
+        let x = 200;
+        let xspeed = 8;
+        let y = 300;
+        let yspeed = 10;
+        let f = 100;
+        radius = 30;
+
+        //function to draw the ball
+        function draw() {
+            context.fillStyle = "red";
+            context.beginPath();
+            // context.fillRect(x, y, 40, 40);
+            context.arc(x, y, radius, 0, Math.PI * 2);
+            context.fill();
+            context.closePath();
+
+        }
+        //function to clear  after the ball moves
+        function clear() {
+            context.clearRect(0, 0, canvas.width, canvas.height);
+
+        }
+        //function to update the position of the ball
+        function update() {
+            x = x + xspeed;
+            y = y + yspeed;
+            const ballright = (x + radius >= canvas.width);
+            if (ballright) {
+                xspeed = -xspeed;
+            }
+            const ballleft = (x - radius <= 0)
+            if (ballleft) {
+                xspeed = -xspeed;
+            }
+            const ballbottom = (y + radius >= canvas.height);
+            if (ballbottom) {
+                yspeed = -yspeed;
+            }
+            const balltop = (y - radius <= 0)
+            if (balltop) {
+                yspeed = -yspeed;
+
+            }
+        }
+
+
+        
+        //function to animate the ball (return all functions)
+        function animate() {
+            clear();
+            draw();
+            update();
+        }
+        window.setInterval(animate, 1000 / f);
+    </script>
+</body>
+
+</html>
