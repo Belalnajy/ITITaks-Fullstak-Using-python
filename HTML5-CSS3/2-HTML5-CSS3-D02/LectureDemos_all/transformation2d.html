@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        section{
+            width:1000px;
+            /* height:200px; */
+            /* border:2px solid black; */
+            margin:10px auto;
+            text-align:center;
+            /* transform:skew(45deg); */
+        }
+        img{
+            width:200px;
+            height:200px;
+            margin:10px;
+            border-radius:50%;
+            opacity:0.5;
+            transform:rotate(-10deg);
+            /* transition:opacity 2s , transform 2s; */
+            transition:all 2s;
+            
+        
+        }
+        img:hover{
+            transform:rotate(0deg)  scale(1.2);
+            opacity:1;
+            
+        }
+        img:active{
+            transform:rotate(360deg) scale(0.8);
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <img src="./UP/1.jpg"/>
+        <img src="./UP/1.jpg"/>
+        <img src="./UP/1.jpg"/>
+        <img src="./UP/1.jpg"/>
+    </section>
+</body>
+</html>

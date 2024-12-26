@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* declare animation : using keyframes */
+        @keyframes sectionanimation {
+            /* changes : from to , percent animation  */
+            /* from{
+                width:400px;
+                height:400px;
+                background-color:yellow;
+            }
+            to{
+                width:500px;
+                height:500px;
+                background-color:red;
+                
+            } */
+             /* percent animation */
+             1%{
+                /* background-color:red; */
+                background-image:url(./UP/1.jpg);
+             }
+             30%{
+                background-image:url(./UP/2.jpg);
+             }
+             50%{
+                background-image:url(./UP/3.jpg);
+             }
+             99%{
+                background-image:url(./UP/4.jpg);
+             }
+        }
+        section{
+            width:400px;
+            height:400px;
+            margin:20px auto;
+            border:1px solid black;
+            background-color:yellow;
+            animation:sectionanimation;
+            animation-duration: 10s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate-reverse;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            /* animation-delay:2s; */
+        }
+        section:hover{
+            animation-play-state: paused;
+        }
+    </style>
+</head>
+<body>
+    <section>
+
+    </section>
+</body>
+</html>

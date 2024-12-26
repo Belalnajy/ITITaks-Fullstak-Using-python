@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid</title>
+    <style>
+        *{
+            padding:0;
+            margin:0;
+            box-sizing:border-box;
+        }
+        #mainwrapper{
+            width:80vw;
+            height: 80vh;
+            border:2px solid black;
+            background-color:yellow;
+            margin:10px auto;
+            display:grid;
+            gap:10px 5px;
+            padding:5px;
+            /* grid-template-rows:repeat(5,10px);*/
+            /* grid-template-rows:1fr 0.5fr 1fr 1fr 1fr; */
+            grid-template-columns:3fr 0.2fr 1fr;   
+            grid-template-areas:"header header  header"
+                                "nav nav  nav"
+                                "main . asideone"
+                                "main . asidetwo"
+                                "footer footer  footer";
+        }
+        #mainwrapper>section{
+            background-color:lightgrey;
+            border:1px solid black;
+        }
+        #header{
+           grid-area: header;
+        }
+        #nav{
+            grid-area: nav;
+        }
+        #main{
+            grid-area: main;
+        }
+        #asidetwo{
+            grid-area: asidetwo;
+        }
+        #asideone{
+            grid-area: asideone;
+        }
+        #footer{
+            grid-area: footer;
+        }
+        #iti{
+            grid-area: iti;
+        }
+    </style>
+</head>
+<body>
+    <div id="mainwrapper">
+        <section id="header">Header</section>
+        <section id="nav">Nav</section>
+        <section id="main">Main</section>
+        <section id="asideone">Asideone</section>
+        <section id="asidetwo">Asidetwo</section>
+        <section id="footer">Footer</section>
+        <!-- <section id="iti">ITI</section> -->
+    </div>
+</body>
+</html>

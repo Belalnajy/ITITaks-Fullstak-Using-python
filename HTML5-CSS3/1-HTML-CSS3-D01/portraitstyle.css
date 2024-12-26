@@ -1,0 +1,21 @@
+#mainheader,#mainfooter{
+        
+    background-color: lightgoldenrodyellow;
+}
+
+#mainnav>ul>li{
+  
+    width:50px;
+    
+
+}
+
+#mainsection{
+
+    width:80%;
+ 
+}
+
+#mainaside{
+  display:none;
+}
