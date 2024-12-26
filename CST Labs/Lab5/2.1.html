@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        while (true) {
+           
+            
+            if (typeof name === "string"
+            &&name.trim() !== "" && !isNaN(name)===false) {
+                    
+                    var name = prompt("Enter your name", "belal");
+                    for (i=0;i<name.length;i++){
+                        var char =name[i];
+                        if(char>="0"&&char<="9"){
+                        alert("invaild name")
+                        break;
+                        }
+                        
+                    }
+
+                while(true)
+                {
+                var mobile = prompt("Enter your mobile number", "0123455678");
+                if (
+                    (mobile.indexOf("010") === 0 ||
+                        mobile.indexOf("011") === 0 ||
+                        mobile.indexOf("012") === 0 ||
+                        mobile.indexOf("015") === 0) &&
+                    mobile.length === 11 &&
+                    mobile.charAt(3) === "-" &&
+                    !isNaN(mobile.replace("-", ""))
+                ) {
+
+                    alert(`your name is ${name} and your mobile is ${mobile}`)
+                    break;
+                }
+                else {
+                    alert("please enter right number")
+                    continue;
+                }
+                }
+            }
+            else {
+                alert("please enter valid name")
+                continue;
+            }
+
+
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

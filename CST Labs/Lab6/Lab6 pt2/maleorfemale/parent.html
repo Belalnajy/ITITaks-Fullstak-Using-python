@@ -1,0 +1,91 @@
+<html>
+  <head>
+    <title>Parent</title>
+  </head>
+  <style>
+    form {
+      margin-left: 10px;
+    }
+    label {
+      font-size: 20px;
+      font-weight: bold;
+      display: block;
+      margin-bottom: 10px;
+      color: #333;
+    }
+
+    select {
+      margin-bottom: 10px;
+      padding: 5px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+    }
+
+    .gender-icon {
+      width: 300px;
+      height: 300px;
+    }
+  </style>
+  <script>
+    //user enter his name and age then select gender and favorite color
+
+    function sumtfun(event) {
+      // Get form values
+      var name = document.getElementById("name").value;
+      var age = document.getElementById("age").value;
+      var gender = document.querySelector('input[name="gender"]:checked').value;
+      var color = document.getElementById("color").value;
+      // Open target window and print the values for the selected gender and favorite color values
+      var targetWindow = window.open("", "_blank", "width=500,height=300");
+      //if color is red color the name by red
+      if (color === "Red") {
+        name = "<span style='color:red;'>" + name + "</span>";
+      }
+      //if color is blue color the name by blue
+      if (color === "Blue") {
+        name = "<span style='color:blue;'>" + name + "</span>";
+      }
+      //if color is green color the name by green
+      if (color === "Green") {
+        name = "<span style='color:green;'>" + name + "</span>";
+      }
+      //if gender is male add man icon
+      if (gender === "Male") {
+        gender = "<img src='icons/man.png' alt='Male' class='gender-icon' />";
+
+        //if gender is female add woman icon
+      } else {
+        gender =
+          "<img src='icons/woman.png' alt='Female' class='gender-icon' />";
+      }
+      // Print the form details in the target window
+      targetWindow.document.write(
+        `<div padding: 10px; font-size: 50px;"><h2>Welcome</h2> <p>${name}</p> <p>${gender}</p></div>`
+      );
+    }
+  </script>
+  <body>
+    <form name="registrationForm" onsubmit="sumtfun(event);">
+      <label for="name">Enter your name:</label>
+      <input type="text" id="name" name="name" /><br /><br />
+      <label for="name">Enter your age:</label>
+      <input type="text" id="age" name="age" /><br /><br />
+      <label>Select your Gender:</label><br />
+      <input type="radio" id="male" name="gender" value="Male" />
+      <label for="male" id="ma">
+        <img src="icons/man.png" alt="Male" class="gender-icon" />
+      </label>
+      <input type="radio" id="female" name="gender" value="Female" />
+      <label for="female" id="fe">
+        <img src="icons/woman.png" alt="Female" class="gender-icon" /> </label
+      ><br /><br />
+      <label for="color">Select you favorite color:</label>
+      <select id="color" name="color">
+        <option value="Red">Red</option>
+        <option value="Green">Green</option>
+        <option value="Blue">Blue</option></select
+      ><br /><br />
+      <button type="submit">Register</button>
+    </form>
+  </body>
+</html>

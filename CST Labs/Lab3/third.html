@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin:10px auto;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            
+            
+            
+            height: 100px;
+            margin: 0;
+        }
+        .Container
+    
+        {
+            width: 500px;
+            background: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            text-align: center;
+            
+        }
+        .fbtw{
+            display:inline-flex;
+            
+        }
+        .facebook {
+           border: 2px solid #375794;
+           width: 230px; height: 30px; 
+           background-color:#375794;
+           color: white;
+          
+           
+           
+        }
+        .twitter{
+           border: 2px solid #1da1f2;
+           width: 230px; height: 30px; 
+           background-color:#1da1f2; 
+           color: white;
+           
+
+        }
+        .facebook,.twitter{
+            margin: 10px auto;
+            
+        }
+        
+        
+        .inputs input {
+            width: 90%;
+            padding: 8px;
+            margin: 7px 0;
+            border: 4px solid #ddd;
+            font-size: 14px;
+        }
+        .login button {
+            background-color: #375794;
+            color: white;
+            padding: 10px;
+            border: none;
+            font-size: 14px;
+            cursor: pointer;
+            width: 90%;
+        }
+
+        .signup {
+            margin-top: 15px;
+            font-size: 14px;
+        }
+    .or{
+        background-color: rgba(190, 190, 161, 0.397);
+        color: black;
+        padding: 2px 4px;
+        border-radius: 9px;
+        font-weight: bold;
+    }
+       
+       
+    </style>
+</head>
+<body>
+    <div class="Container">
+        <div class="fbtw">
+        <div class="facebook">
+            <span class="facebook-login">Login to Facebook</span>
+        </div>
+        <div class="twitter">
+            <span class="twitter-login">Login to twitter</span>        </div>
+    </div>
+        <span class="or">
+            Or
+        </span>
+
+        <div class="inputs">
+            <input type="text" placeholder="Username">
+            <input type="password" placeholder="Password">
+        </div>
+        
+        <div class="login">
+            <div class="keep-me">
+                <input type="checkbox" id="keep-me" name="keep-me" value="keep">
+                <label for="keep-me"> keep me signed in</label> <span style="padding-left: 90px;">Forgot Your Password?</span>
+            </div>
+            <button>Login</button>
+            
+        </div>
+        <p class="signup">Not a member? <a href="#">Sign up now!</a></p>
+    </div>
+</body>
+</html>

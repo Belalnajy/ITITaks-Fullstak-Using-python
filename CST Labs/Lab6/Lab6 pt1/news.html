@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>News Table</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+
+      table {
+        width: 50%;
+        margin-top: 20px;
+        border-collapse: collapse;
+      }
+
+      table,
+      th,
+      td {
+        border: 1px solid black;
+      }
+
+      th,
+      td {
+        padding: 10px;
+        text-align: left;
+      }
+
+      input {
+        margin-bottom: 10px;
+        padding: 5px;
+      }
+
+      button {
+        padding: 5px 10px;
+        margin-left: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>News Table</h1>
+    <input type="text" id="newsInput" placeholder="Enter your news here" />
+    <button onclick="addNews()">Add</button>
+    <table>
+      <tr>
+        <th>No.</th>
+        <th>News</th>
+      </tr>
+
+      <tbody id="newsTable">
+        <tr></tr>
+      </tbody>
+    </table>
+    <button onclick="countRows()">Count Rows</button>
+    <p id="rowCount"></p>
+
+    <script>
+      function addNews() {
+        var newsInput = document.getElementById("newsInput").value;
+        var newsTable = document.getElementById("newsTable");
+        var newRow = newsTable.insertRow(newsTable);
+
+        var cell1 = newRow.insertCell(0);
+        var cell2 = newRow.insertCell(1);
+
+        cell1.innerHTML = newsTable.rows.length - 1;
+        cell2.innerHTML = newsInput;
+
+        document.getElementById("newsInput").value = "";
+      }
+
+      function countRows() {
+        var newsTable = document.getElementById("newsTable");
+        var rowCount = newsTable.rows.length - 1;
+        document.getElementById("rowCount").innerHTML =
+          "Number of rows: " + rowCount;
+      }
+    </script>
+  </body>
+</html>

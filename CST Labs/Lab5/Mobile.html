@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // while (true) {
+        //     var name = prompt("Enter your name", "belal");
+        //     //Validate name that dose not contain spaces 
+        //     if (name.trim() !== "" && /^[A-Za-z]+$/.test(name.trim())) {
+
+        //         while (true) {
+        //             var mobile = prompt("Enter your mobile number", "0123455678");
+        //             if (
+        //                 (mobile.indexOf("010") === 0 ||
+        //                     mobile.indexOf("011") === 0 ||
+        //                     mobile.indexOf("012") === 0 ||
+        //                     mobile.indexOf("015") === 0) &&
+        //                     mobile.length === 11 &&
+        //                     mobile.charAt(3) === "-" &&
+        //                     !isNaN(mobile.replace("-", ""))
+        //             ) {
+
+        //                 alert(`your name is ${name} and your mobile is ${mobile}`)
+        //                 break;
+        //             }
+        //             else {
+        //                 alert("please enter right number")
+        //                 continue;
+        //             }
+        //         }
+        //     }
+        //     else {
+        //         alert("please enter valid name")
+        //         continue;
+        //     }
+        //     break;
+        // }
+
+        //getting the name from user 
+        while (true) {
+             var name = prompt("Enter your name", "belal");
+             //Validate name
+             if (name.trim().split("").every(function (i){return isNaN(i)})){
+               break; 
+             }
+             else{
+                alert("Please enter a valid name")
+             }
+             
+        }
+        while (true) {
+                    var mobile = prompt("Enter your mobile number", "012-34556788");
+                 if (
+                         (mobile.indexOf("010") === 0 ||
+                             mobile.indexOf("011") === 0 ||
+                             mobile.indexOf("012") === 0 ||
+                             mobile.indexOf("015") === 0) &&
+                             mobile.length === 12 &&
+                             mobile.charAt(3) === "-" &&
+                             !isNaN(mobile.replace("-", ""))
+                     ) {
+
+                         alert(`your name is ${name.trim()} and your mobile is ${mobile}`)
+                         break;
+                     }
+                     else {
+                       alert("please enter right number")
+                         continue;
+                     }
+
+                    }
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

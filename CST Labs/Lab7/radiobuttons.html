@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Text Style</title>
+    <style>
+        
+        #text {
+            padding: 10px;
+            border: 1px solid black;
+            margin: 20px;
+        }
+        table {
+            margin-top: 20px;
+            border-collapse: collapse;
+        }
+        table td {
+            padding: 10px;
+            border: 1px solid #ccc;
+            
+            
+        }
+    </style>
+</head>
+<body>
+    <h2>Change text style</h2>
+   
+    <div id="text">here is a paragraph of text</div>
+
+   
+    <table>
+        <tr>
+            <td>Font Family:</td>
+            <td>
+                <input type="radio" name="font" value="Arial" onclick="changeStyle('fontFamily', 'Arial')"> Arial
+                <input type="radio" name="font" value="Verdana" onclick="changeStyle('fontFamily', 'Verdana')"> Verdana
+                <input type="radio" name="font" value="Times New Roman" onclick="changeStyle('fontFamily', 'Times New Roman')"> Times New Roman
+                <input type="radio" name="font" value="Georgia" onclick="changeStyle('fontFamily', 'Georgia')"> Georgia
+                <input type="radio" name="font" value="Helvetica" onclick="changeStyle('fontFamily', 'Helvetica')"> Helvetica
+            </td>
+        </tr>
+        <tr>
+            <td>Letter spacing:</td>
+            <td>
+                <input type="radio" name="spcaing" value="0px" onclick="changeStyle('letter-spacing', '0px')"> none
+                <input type="radio" name="spcaing" value="2px" onclick="changeStyle('letter-spacing', '2px')"> 2px
+                <input type="radio" name="spcaing" value="4px" onclick="changeStyle('letter-spacing', '4px')"> 4px
+                <input type="radio" name="spcaing" value="5px" onclick="changeStyle('letter-spacing', '6px')"> 6px
+                <input type="radio" name="spcaing" value="6px" onclick="changeStyle('letter-spacing', '8px')"> 8px    
+            </td>
+        </tr>
+        <tr>
+            <td>Font Size:</td>
+            <td>
+                <input type="radio" name="size" value="24px" onclick="changeStyle('fontSize', '24px')"> 24px
+                <input type="radio" name="size" value="32px" onclick="changeStyle('fontSize', '32px')"> 32px
+                <input type="radio" name="size" value="48px" onclick="changeStyle('fontSize', '48px')"> 48px
+                <input type="radio" name="size" value="64px" onclick="changeStyle('fontSize', '64px')"> 64px
+                <input type="radio" name="size" value="96px" onclick="changeStyle('fontSize', '96px')"> 96px
+
+            </td>
+        </tr>
+        <tr>
+            <td>Text Color:</td>
+            <td>
+                <input type="radio" name="color" value="red" onclick="changeStyle('color', 'red')"> Red
+                <input type="radio" name="color" value="blue" onclick="changeStyle('color', 'blue')"> Blue
+                <input type="radio" name="color" value="green" onclick="changeStyle('color', 'green')"> Green
+                <input type="radio" name="color" value="black" onclick="changeStyle('color', 'black')"> Black
+                <input type="radio" name="color" value="white" onclick="changeStyle('color', 'white')"> White
+                <input type="radio" name="color" value="yellow" onclick="changeStyle('color', 'yellow')"> Yellow
+
+
+            </td>
+        </tr>
+        <tr>
+            <td>Text Decoration:</td>
+            <td>
+                <input type="radio" name="decoration" value="underline" onclick="changeStyle('textDecoration', 'underline')"> Underline
+                <input type="radio" name="decoration" value="overline" onclick="changeStyle('textDecoration', 'overline')"> Overline
+                <input type="radio" name="decoration" value="line-through" onclick="changeStyle('textDecoration', 'line-through')"> Line Through
+                <input type="radio" name="decoration" value="none" onclick="changeStyle('textDecoration', 'none')"> None
+            </td>
+        </tr>
+        <tr>
+            <td>Text align</td>
+            <td>
+                <input type="radio" name="align" value="left" onclick="changeStyle('text-align', 'left')"> left
+                <input type="radio" name="align" value="center" onclick="changeStyle('text-align', 'center')"> center
+                <input type="radio" name="align" value="right" onclick="changeStyle('text-align', 'right')"> right
+
+                
+
+            </td>
+        </tr>
+        <tr>
+            <td>Text transform</td>
+            <td>
+                <input type="radio" name="transform" value="left" onclick="changeStyle('text-transform', 'uppercase')"> uppercase
+                <input type="radio" name="transform" value="right" onclick="changeStyle('text-transform', 'lowercase')"> lowercase
+                <input type="radio" name="transform" value="capitalize" onclick="changeStyle('text-transform', 'capitalize')"> capitalize
+                <input type="radio" name="transform" value="none" onclick="changeStyle('text-transform', 'none')"> None
+            </td>
+        </tr>
+    </table>
+
+    <script>
+        // Function to dynamically change styles
+        function changeStyle(styleProperty, value) {
+            var text = document.getElementById("text");
+            text.style[styleProperty] = value;
+        }
+    </script>
+</body>
+</html>

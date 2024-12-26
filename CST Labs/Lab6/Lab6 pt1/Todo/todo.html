@@ -1,0 +1,120 @@
+<html>
+  <head>
+    <title>Todo</title>
+    <style>
+      #head {
+        font-size: 34px;
+        font-weight: bold;
+        color: #9e1515;
+        margin: 20px;
+      }
+      #task {
+        color: #0a06067f;
+        margin-left: 50px;
+        width: 80%;
+        height: 6%;
+        border: 1px solid rgba(0, 0, 0, 0.247);
+        border-radius: 3px;
+        box-shadow: 4px 4px rgba(0, 0, 0, 0.304);
+        padding-left: 10px;
+        box-sizing: border-box;
+      }
+      #addTask {
+        margin-left: 3px;
+        height: 40px;
+        background-color: rgba(94, 142, 214, 0.736);
+        color: white;
+        border: none;
+        border-radius: 7px;
+        text-align: center;
+      }
+      #addTask:hover {
+        background-color: rgba(0, 0, 0, 0.899);
+        color: white;
+      }
+
+      table {
+        width: 100%;
+        table-layout: fixed;
+        border-collapse: collapse;
+        margin-top: 20px;
+        font-size: 20px;
+      }
+      #done {
+        color: rgb(255, 255, 255);
+
+        background-color: rgb(204 10 10);
+        border: 4px solid white;
+      }
+      #checkbox {
+        background-color: rgba(6, 6, 6, 0.163);
+        border: none;
+      }
+    </style>
+    <script>
+    function addTask() {
+        //create a new task object and check the value the user entered
+          var taskInput = document.getElementById("task");
+          var taskValue = taskInput.value.trim();
+          if (taskValue === "") {
+            alert("Please enter a task.");
+            return;
+          }
+          //create new table row and cells for the task and delete button
+          var table = document.querySelector("table");
+          var newRow = table.insertRow(-1); //when user adds a new row added in the table bottom 
+          var doneCell = newRow.insertCell(0); //first cell 
+          var taskCell = newRow.insertCell(1); //second cell
+          var deleteCell = newRow.insertCell(2); //third cell
+          //make a checkbox to see if the task is finished or not
+          var checkbox = document.createElement("input");
+          checkbox.type = "checkbox";
+          checkbox.id = "checkbox";
+          // when check box is clicked make a line on the task by tag <del>
+          checkbox.onclick = function () {
+            if (checkbox.checked) {
+              taskCell.innerHTML = "<del>" + taskValue + "</del>";
+            } else {
+              taskCell.innerHTML = taskValue;
+            }
+          };
+
+          doneCell.appendChild(checkbox);
+          taskCell.textContent = taskValue; //assigns the text content of the table cell to the value of the task entered by the user
+          deleteCell.innerHTML = '<button onclick="deleteTask(this)">Delete</button>'; // to add button to delete the task 
+
+          taskInput.value = ""; //after the task entered by the user delete the text in input field
+        }
+
+        function deleteTask(button) {
+        // var row = button.parentNode; in the case button will delete only the <td> that contains the delete button
+          var row = button.parentNode.parentNode; // in the case button will delete the entire row that contains the delete button
+          row.parentNode.removeChild(row); // removes the row from the parent node
+        }
+    </script>
+  </head>
+  <body>
+    <p style="text-align: center" id="head">To do Organiser</p>
+    <div>
+      <input type=" text" name="task" value="" id="task" />
+      <button id="addtask" onclick="addTask()">Add Task</button>
+      <div>
+        <table>
+          <tr>
+            <th id="done">Done</th>
+            <th id="done">Task</th>
+            <th id="done">Delete</th>
+          </tr>
+          <tr>
+            
+            </td>
+            <td></td>
+            <td>
+              
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,29 @@
+<html>
+<head>
+<title>Document</title>
+<script>
+    //when click on the a button show me the child pages 
+      function childwin() {
+        var targetchild = open("./child.html", "", "width=800,height=500");
+        //to make a page scroll automatically after click
+        function scroll() {
+          targetchild.scrollBy(0, 100);
+        }
+        // //call the scroll function every  milliseconds
+        // var t = setInterval(scroll, 100);
+        // //function to stop scrolling and close the window
+        // function stopclose() {
+        //   clearInterval(t);
+        //   targetchild.close();
+        // }
+        // setTimeout(stopclose, 2000);
+        setInterval(scroll, 50);
+        clearInterval(scroll);
+
+      }
+</script>
+</head>
+<body>
+<a href="#childwindow" onclick="childwin();">open pop up advertise window</a>
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+  <head>
+    <title>News</title>
+    <style type="text/css">
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #d3d3d3; 
+        padding: 20px;
+      }
+      .container {
+        background-color: #f9f9f9;
+        border: 1px solid #ccc;
+        padding: 20px;
+        width: 400px;
+      }
+      h3 {
+        margin: 0 0 10px 0;
+      }
+      input[type="text"] {
+        width: 200px;
+        margin: 5px 0;
+        padding: 5px;
+        border: 1px solid #999;
+      }
+      input[type="button"] {
+        padding: 5px 10px;
+        cursor: pointer;
+        border: 1px solid #999;
+        background-color: #e0e0e0;
+      }
+      ul {
+        margin: 10px 0;
+        padding: 0;
+        list-style-type: none;
+      }
+      li {
+        margin: 5px 0;
+        padding: 5px;
+        background-color: #e7e7e7;
+        border: 1px solid #ccc;
+       
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <label><b>News Type:</b></label>
+      <input type="radio" name="newsType" value="sport" checked /> Sport
+      <input type="radio" name="newsType" value="social" /> Social
+      <input type="radio" name="newsType" value="politic" /> Politic
+
+      <br />
+      <input type="text" id="newsInput" placeholder="add here" />
+      <input type="button" value="Add" id="addButton" />
+
+      <br /><br />
+      <label><b>Search :</b></label>
+      <input type="text" id="searchInput" placeholder="search news" />
+
+      <ul id="newsList"></ul>
+    </div>
+
+    <script type="text/javascript">
+      // Get elements
+      var newsInput = document.getElementById("newsInput");
+      var addButton = document.getElementById("addButton");
+      var searchInput = document.getElementById("searchInput");
+      var newsList = document.getElementById("newsList");
+
+      // Add Button
+      addButton.onclick = function () {
+        var newsText = newsInput.value.trim();
+        if (newsText === "") {
+          alert("Please enter some news!");
+          return;
+        }
+
+        // Get selected news type array from all the radios in document
+        var radios = document.getElementsByName("newsType");
+        for (var i = 0; i < radios.length; i++) {
+          if (radios[i].checked) {
+            var newsType = radios[i].value;
+            break;
+          }
+        }
+
+        // Create a list item with news type
+        var listItem = document.createElement("li");
+        listItem.innerHTML =
+          `<b>[${newsType.toUpperCase()}] </b> ${newsText}` ;
+
+        // Append to list
+        newsList.appendChild(listItem);
+
+        // Clear input
+        newsInput.value = "";
+      };
+
+      // Search
+        searchInput.onkeyup = function () {
+        var searchText = searchInput.value.toLowerCase();
+        var listItems = newsList.getElementsByTagName("li");
+
+        // Filter list items
+        for (var i = 0; i < listItems.length; i++) {
+          var itemText = listItems[i].innerText.toLowerCase();
+          if (itemText.indexOf(searchText) > -1 ) //-1 to show me from the first char[0]
+           {
+            listItems[i].style.display = "list-item";
+          } else {
+            listItems[i].style.display = "none";
+          }
+        }
+      };
+    </script>
+  </body>
+</html>

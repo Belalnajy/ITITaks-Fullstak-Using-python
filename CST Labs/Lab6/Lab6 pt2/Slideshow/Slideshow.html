@@ -1,0 +1,129 @@
+<html>
+
+<head>
+
+    <title>slidshow</title>
+    <style>
+        .container {
+            align-items: center;
+
+        }
+
+        .header {
+            border: 2px solid orange;
+
+        }
+
+        p {
+            text-align: center;
+            font-size: 30px;
+            ;
+            font-weight: bold;
+            color: hsl(192deg 51.4% 58.04%);
+        }
+
+        span {
+
+            font-size: 30px;
+            font-weight: bold;
+            color: black;
+        }
+
+        .images {
+            border: 10px solid orange;
+            width: 500px;
+            height: 450px;
+            margin: 30px auto;
+        }
+
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 20px;
+            margin-left: 30px;
+            color: white;
+            border: none;
+
+
+        }
+
+        button.start {
+            background-color: green;
+        }
+
+        button.stop {
+            background-color: red;
+        }
+
+        button.prev {
+            background-color: orange;
+        }
+
+        button.next {
+            background-color: orange;
+        }
+
+        button:hover {
+            background-color: black;
+            color: white;
+            
+
+        }
+    </style>
+    
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <p>Silde show <span>game</span></p>
+        </div>
+        <div class="images">
+            <img src="./UP/1.jpg" id="myimg">
+            <div class="sliderbut">
+                <button class="Prev" onclick="prevImage()">previous</button>
+                <button class="start" onclick="start()">start</button>
+                <button class="Stop" onclick="stopImage()">Stop</button>
+                <button class="next" onclick="nextImage()">Next</button>
+            </div>
+        </div>
+    </div>
+    <script>
+
+        var imagesarr=["./UP/1.jpg","./UP/2.jpg","./UP/3.jpg","./UP/4.jpg","./UP/5.jpg"];
+        var t = null;
+        function start(){
+            if(t===null){
+            t=setInterval("nextImage()",500);
+            }
+        }
+        var i=0;
+        function prevImage(){
+            i--;
+            if(i<0) i=imagesarr.length-1;
+           myimg.src= imagesarr[i];
+        }
+        function nextImage() {
+            ++i;
+            if(i>=imagesarr.length) i=0;
+            myimg.src=imagesarr[i];
+        }
+        function stopImage() {
+            if (t!==null) {
+            clearInterval(t);
+            t = null;
+            }
+        }   
+
+
+
+    </script>
+</body>
+
+</html>

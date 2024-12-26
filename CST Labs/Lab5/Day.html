@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //show today date
+        var today = new Date();
+        function getDayName(dayNumber)
+        // Function to get the day name based on the day number 
+        {
+            var dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+            return dayNames[dayNumber];
+            // return day names from the day number 
+        }
+        var dayNumber = today.getDay(); // Get the day number
+        var dayName = getDayName(dayNumber);
+        document.write(`the day is ${dayName}<br>`);
+        document.write("Today is: " + today.toLocaleDateString());
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

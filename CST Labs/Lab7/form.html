@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Validation</title>
+    <style>
+      .error-msg {
+        color: red;
+        font-size: 12px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>2-Form Validation Page</h2>
+    <form id="validationform">
+      
+    
+      <label for="fname">First name:</label><br />
+      <input type="text" id="fname" name="fname" />
+      <span id="name-error" class="error-msg"></span><br />
+
+      
+      <label for="country">Country:</label><br />
+      <select id="country" name="country">
+        <option value="">Select Country</option>
+        <option value="1111">Egypt</option>
+        <option value="2222">USA</option>
+        <option value="3333">UAE</option>
+        <option value="4444">Norway</option></select
+      ><br />
+
+      <label for="zip">Zip:</label><br />
+      <input type="text" id="zip" name="zip" readonly /><br />
+
+     
+      <label for="email">Email:</label><br />
+      <input type="email" id="email" name="email" />
+      <span id="email-error" class="error-msg"></span><br />
+
+      
+      <label>Hobbies:</label><br />
+      <input type="checkbox" id="writing" name="hobby" value="writing" />
+      <label for="writing">Writing</label>
+      <input type="checkbox" id="reading" name="hobby" value="reading" />
+      <label for="reading">Reading</label>
+      <input type="checkbox" id="swimming" name="hobby" value="swimming" />
+      <label for="swimming">Swimming</label>
+      <input type="checkbox" id="sleeping" name="hobby" value="sleeping" />
+      <label for="sleeping">Sleeping</label>
+      <span id="hobby-error" class="error-msg"></span><br />
+
+     
+      <input type="submit" id="submit-btn" value="Register" />
+      <input type="button" id="clear-btn" value="Clear" />
+    </form>
+
+    <script>
+      window.addEventListener("load", function (e) {
+        const form = document.getElementById("validationform");
+        const fname = document.getElementById("fname");
+        const email = document.getElementById("email");
+        const country = document.getElementById("country");
+        const zip = document.getElementById("zip");
+        const hobbies = document.querySelectorAll("input[name='hobby']");
+        const clearBtn = document.getElementById("clear-btn");
+
+        // Focus on name field on load
+        fname.focus();
+
+        // Name field validation
+        fname.addEventListener("blur", function (e) {
+          const nameError = document.getElementById("name-error");
+          if (!fname.value.trim()) {
+            fname.style.border = "2px solid red";
+            nameError.textContent = "Name is required!";
+            fname.focus();
+          } else {
+            fname.style.border = "2px solid green";
+            nameError.textContent = "";
+          }
+        });
+
+        // Auto-fill ZIP based on country selection
+        country.addEventListener("change", function (e) {
+          if (country.value) {
+            zip.value = country.value;
+          } else {
+            zip.value = "";
+          }
+        });
+
+        // Email validation
+        email.addEventListener("blur", function (e) {
+          const emailError = document.getElementById("email-error");
+          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          if (!emailRegex.test(email.value)) {
+            email.style.border = "2px solid red";
+            emailError.textContent = "Enter a valid email!";
+          } else {
+            email.style.border = "2px solid green";
+            emailError.textContent = "";
+          }
+        });
+
+        // Submit button validation
+        form.addEventListener("submit", (e) => {
+          let isValid = true;
+
+          // Name check
+          if (!fname.value.trim()) {
+            document.getElementById("name-error").textContent =
+              "Name is required!";
+            fname.style.border = "2px solid red";
+            fname.focus();
+            isValid = false;
+          }
+
+          // Hobby check
+          const hobbyError = document.getElementById("hobby-error");
+          const checkedHobbies = Array.from(hobbies).some(function (hobby) {
+            return hobby.checked;
+          });
+          if (!checkedHobbies) {
+            hobbyError.textContent = "Please choose at least one hobby!";
+            isValid = false;
+          } else {
+            hobbyError.textContent = "";
+          }
+
+          if (!isValid) {
+            e.preventDefault(); // Stop form submission
+          }
+        });
+
+        // Clear button 
+        clearBtn.addEventListener("click", function (e) {
+          const confirmation = confirm("Do you want to clear the form?");
+          if (confirmation) {
+            form.reset();
+            fname.style.border = "";
+            email.style.border = "";
+            zip.value = "";
+            document.querySelectorAll(".error-msg").forEach((el) => {
+              el.textContent = "";
+            });
+            fname.focus();
+          }
+        });
+      });
+      
+    </script>
+  </body>
+</html>

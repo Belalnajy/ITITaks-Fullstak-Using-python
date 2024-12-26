@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // receive an array of numbers from user it's size will determined from user
+        var arr = []
+
+        while (true) {
+            var size = parseInt(prompt("Enter your size", "5"));
+
+            // to make sure the size is number
+            if (isNaN(size)) {
+                alert("Please enter a number");
+                continue;
+            }            
+            else {
+                break;
+            }
+
+        }
+        for (var i = 0; i < size; i++) {
+            while (true) {
+                var num = parseFloat(prompt(`Enter number ${i + 1} of ${size}:`));
+                // to make sure the number is number    
+                if (isNaN(num)) {
+                    alert("Invalid input. Please enter a valid number.");
+                    continue;
+                }
+                else {
+                    arr.push(num);
+                    break;
+                }
+            }
+        }
+        function isEven(num) {
+            return num % 2 == 0;
+        }
+
+        while (true) {
+            //ask to enter one of this options
+            var choice = prompt("Enter one of the following options:\n" +
+                "a: Display the array in the same order\n" +
+                "b: Display the array in ascending order\n" +
+                "c: Display the array in descending order\n" +
+                "d: Display the reversed version of the array\n" +
+                "e: Display even numbers only\n" +
+                "f: Display numbers divisible by a user-provided number\n" +
+                "g: Display a new array with 30% discount for all numbers\n" +
+                "h: Display a string of numbers concatenated with '***'\n" +
+                "q: Quit\n"
+            );
+            //the user choose something
+            if (choice == "a" || choice == "A") {
+                alert(`your array is :${arr}`)
+            }
+            else if (choice == "b" || choice == "B") {
+                alert(`your array in ascending order is :${arr.sort()}`);
+            }
+            else if (choice == "c" || choice == "C") {
+               
+                alert(`the array in descending order is :${arr.slice().sort(function (x, y) { return y - x; }).join(", ")}`)
+            }
+            else if (choice == "d" || choice == "D") {
+                alert(`the reversed array is :${arr.reverse()}`);
+            }
+            else if (choice == "e" || choice == "E") {
+                alert(`the even numbers in the array are :${arr.filter(num => num % 2 == 0)}`);
+            }
+            else if (choice == "f" || choice == "F") {
+                //make a user to give a divisible number 
+                var divisible = parseFloat(prompt("Enter a number that you want to divide by", "5"));
+                alert(`the numbers divisible by ${divisible} are :${arr.filter(num => num % divisible == 0)}`);
+                //function to calculate number after division
+                
+                //return number after division
+                alert(`the numbers after division by ${divisible} are :${arr.map(function numafterdiv(num, divisible) {
+                    return (num / divisible);
+                })}`);
+
+            }
+
+            else if (choice == "g" || choice == "G") {
+                var discount = parseFloat(prompt("Enter the discount percentage", "30"));
+                alert(`the array with 30% discount is :${arr.map(num => num - (num * discount / 100))}`);
+            }
+            else if (choice == "h" || choice == "H") {
+                alert(`the string of numbers concatenated with '***' is :${arr.join('***')}`)
+            }
+            else if (choice == "q" || choice == "Q") {
+                alert("Thank you for using our program.")
+                break;
+            }
+            else {
+                alert("Invalid choice. Please select a valid option.");
+                continue;
+            }
+            //if he wants to repeat runniung
+            var repeat = prompt("do you want to try anything again yes/no")
+            if (repeat == "yes") {
+                continue;
+            }
+
+            else {
+                break;
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Operations</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            color: blue;
+            text-align: center;
+        }
+        .result {
+            margin-top: 20px;
+        }
+        .result p {
+            font-size: 1.2em;
+        }
+        .result .sum {
+            color: red;
+        }
+        .result .product {
+            color: green;
+        }
+        .result .division {
+            color: orange;
+        }
+    </style>
+</head>
+<body>
+    <h1>Adding -- Multiplying -- and Dividing 3 values</h1>
+    <div class="result" id="result"></div>
+
+    <script>
+        // Prompt the user for 3 numbers
+        let numbers = [];
+        for (let i = 0; i < 3; i++) {
+            let input = parseFloat(prompt(`Enter number ${i + 1}:`, "0"));
+            if (isNaN(input)) {
+                alert("Invalid input. Please enter a valid number.");
+                i--; // Repeat the current iteration
+            } else {
+                numbers.push(input);
+            }
+        }
+
+        // Perform operations
+        const sum = numbers.reduce((a, b) => a + b, 0);
+        const product = numbers.reduce((a, b) => a * b, 1);
+        const division = (numbers[0] / numbers[1] / numbers[2]).toFixed(2); // Ensure 2 decimal places
+
+        // Generate result string
+        const resultDiv = document.getElementById("result");
+        resultDiv.innerHTML = `
+            <p class="sum">Sum of the 3 values ${numbers.join(" + ")} = ${sum}</p>
+            <p class="product">Multiplication of the 3 values ${numbers.join(" * ")} = ${product}</p>
+            <p class="division">Division of the 3 values ${numbers.join(" / ")} = ${division}</p>
+        `;
+    </script>
+</body>
+</html>

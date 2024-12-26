@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Options</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        justify-content: center;
+            
+ }
+        .container {
+        width: 95%;
+        max-width: 800px;
+         background: #fff;
+        }
+        .option {
+            display: flex;
+            align-items: center; 
+            padding: 15px;
+            border-bottom: 1px solid #ddd;
+        }
+        .icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 20px;
+        }
+        .icon.general {
+            background-color: #fcd34d;
+        }
+        .icon.embedded {
+            background-color: #60a5fa;
+        }
+        .icon.popup {
+            background-color: #fb7185; 
+        }
+        .details {
+            margin-right: 80px;
+            margin-left: 24px;
+            flex: 1; 
+            /*imp*/
+        }
+        .details h4 {
+            margin: 0;
+            font-size: 16px;
+            color: #333;
+        }
+        .details p {
+            margin: 5px 0 0;
+            font-size: 14px;
+            color: #666;
+        }
+        .select{
+            padding: 10px 20px;
+            background-color: #6d767f3f;
+            color: black;
+            font-size: 14px;
+        }
+    
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="option">
+            <div class="icon general">✏️</div>
+            <div class="details">
+                <h4>General forms</h4>
+                <p>Build, design, and translate signup forms and response emails.</p>
+            </div>
+            <p class="select">Select</p>
+        </div>
+        <div class="option">
+            <div class="icon embedded">🔗</div>
+            <div class="details">
+                <h4>Embedded forms</h4>
+                <p>Generate HTML code to embed in your site or blog to collect signups.</p>
+            </div>
+            <p class="select">Select</p>
+        </div>
+        <div class="option">
+            <div class="icon popup">📋</div>
+            <div class="details">
+                <h4>Subscriber popup</h4>
+                <p>Design a popup signup form that can be embedded on any site.</p>
+            </div>
+            <p class="select">Select</p>
+        </div>
+    </div>
+</body>
+</html>

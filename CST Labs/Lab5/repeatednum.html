@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+         while(true){
+        var value = prompt("Enter array values","2,6,9,3,4");
+    
+        
+         if ( value.trim().split(",").every(function (i){return isNaN(i)})){
+             
+             break;
+         }
+         }
+         document.write( `<table style="border: 2px solid green; ">
+             <th><td>Values</td></th>`);
+
+
+             for (var i=0;i<value.length; i++){
+             document.write(`
+             <tr><td>${value[i]}</td></tr>`);
+             }
+
+             for (var i=0;i<value.length; i++){
+
+             if(value.indexOf(value[i]) != value.lastIndexOf(value[i])){
+                 document.write(`<p>repeated row number is ${value[i]}<br> row number ${value.lastIndexOf(value[i])}
+                 </p>
+          `)
+             break;
+             } 
+           
+             }
+        
+    </script>
+</head>
+<body>
+   
+</body>
+</html>

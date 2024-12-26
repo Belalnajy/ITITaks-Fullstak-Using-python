@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootlegame</title>
+    <script>
+        //array of names
+        var arr = ["belal","ahmed","omar","nagy","galal","mohsen"];
+        var arrtwo = arr.reverse("omar")
+        //select random name from array
+        var randomarr = arr[Math.floor(Math.random() * arr.length)];
+        var randomtwo =  arrtwo[Math.floor(Math.random() * arrtwo.length)];
+        while(randomarr ==randomtwo){
+        var randomtwo =  arrtwo[Math.floor(Math.random() * arrtwo.length)];
+        }
+        document.write("The random :"+ randomarr + " "+ randomtwo);
+        
+        
+        
+        
+        
+        
+        //var arr=[];
+        // var rand=prompt(" enter names of your choice : ","belal,ahmed,omar,nagy,galal,mohsen");
+        //arr=rand.split(',');
+        </script>
+</head>
+<body>
+    
+</body>
+</html>
