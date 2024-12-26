@@ -7,5 +7,12 @@
 **/*.tiff
 **/*.ico
 **/*.svg
-**/*webp
-**/*mp4
+
+# Ignore all video files in all directories
+**/*.mp4
+**/*.avi
+**/*.mkv
+**/*.mov
+**/*.wmv
+**/*.flv
+**/*.webm
