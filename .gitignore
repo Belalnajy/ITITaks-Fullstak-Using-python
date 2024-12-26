@@ -8,6 +8,7 @@
 **/*.ico
 **/*.svg
 **/*webp
+**/*avif
 
 # Ignore all video files in all directories
 **/*.mp4
