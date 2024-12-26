@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //define an array of number 
+        let arr=[];
+        //sort them ascending and descending (using array sort method and arrow functions)
+        arr=[60, 23, 23, 15, 32, 95, 44, 61];
+        arr.sort((a,b)=>a-b);
+        console.log(`asc order: ${arr}`);
+        arr.sort((a,b)=>b-a);
+        console.log(`Des order: ${arr}`);
+        //Filter numbers larger than 50 (using array filter method and Arrow functions)
+        let filteredArr=arr.filter((num)=>num>50); //parameter num return num>50
+        console.log(`Filtered numbers: ${filteredArr}`);
+        //Display Max and Min Numbers (using math methods and spread operator)
+        // let max=Math.max(...filteredArr);
+        // let min=Math.min(...filteredArr);
+        // console.log(`Max number: ${max}`);
+        // console.log(`Min number: ${min}`);
+
+        console.log(`max number : ${Math.max(...filteredArr)}`)
+        console.log(`min number : ${Math.min(...filteredArr)}`)
+        
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

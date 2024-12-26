@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!DOCTYPE html>
+    <html lang="en">
+      <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Calculator</title>
+        <script>
+          // Take an operator and any number of integers from the user
+          let opre = prompt("Enter an operator (+, -, *, /): ");
+          let num = prompt(
+            "Enter any number of integers separated by commas: "
+          );
+
+          // Convert the string of numbers into an array of integers
+          let args = num.split(",").map(Number);
+
+          // Define function that takes an operator and any numbers of integers
+          function myfun(op, ...args) {
+            let result;
+            switch (op) {
+              case "+":
+                result = args.reduce((acc, current) => acc + current);
+                break;
+              case "-":
+                result = args.reduce((acc, current) => acc - current);
+                break;
+              case "*":
+                result = args.reduce((acc, current) => acc * current);
+                break;
+              case "/":
+                result = args.reduce((acc, current) => acc / current);
+                //prevent division by zero
+                if (args.includes(0)) {
+                  result = "Error: Division by zero";
+                  break;
+                }
+                break;
+              default:
+                //if user did not choose one of this opreators
+                alert("please choose one of these operators (+, -, *, /)")
+                result = "Error: Invalid operator";
+                
+            }
+            return result;
+          }
+
+          let result = myfun(opre, ...args);
+          console.log(`“result of sum operation for ${num} is ${result}`);
+        </script>
+      </head>
+      <body></body>
+    </html>
+  </head>
+  <body></body>
+</html>

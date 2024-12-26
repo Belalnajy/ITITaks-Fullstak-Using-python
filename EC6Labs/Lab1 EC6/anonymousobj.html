@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script> 
+        //declare variables for project id, name, and duration
+      let projId;
+      let projName;
+      let duration;
+      while (true){
+      projId = prompt("enter your project ID value", "01");//take project id from the user 
+      //validation of the project id
+      if (Number.isInteger(parseFloat(projId))){
+        break;
+      }
+      else{
+        alert("please enter a valid number");
+      }
+      }
+      //take project name from the user
+      while (true){
+      projName = prompt("enter your project name", );
+      //validation of the project name
+      if (projName !==""){
+        break;
+      }
+      else{
+        alert("please enter a valid project name")
+      }
+      }
+      while(true){
+      //take duration from the user
+      duration = prompt("enter your project duration", );
+      if (duration !==""){
+        break;
+      }
+      else{
+        alert("please enter a valid duration")
+      }}
+      //Create constant project anonymouse using object literals
+      const obj = {
+        id: projId,
+        name: projName,
+        duration: duration
+      };
+      console.log(obj);
+    </script>
+  </head>
+  <body></body>
+</html>
